@@ -227,7 +227,7 @@ def main():
         tokenized_test = tokens(clean_test, 'message')
 
         #Create a function that removes stopwords from a dataframe
-        @st.cache(persist = True)
+        
 
         #Create function that remove stopwords from a dataframe
         def stop(df, column_name):
