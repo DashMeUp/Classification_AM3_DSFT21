@@ -80,6 +80,7 @@ tweet_cv = joblib.load(vectorizer) # loading your vectorizer from the pkl file
 
 # Load your raw data
 train = pd.read_csv("train.csv")
+test = pd.read_csv("test_with_no_labels.csv")
 img_raw = Image.open('resources/imgs/raw.jpg')
 img_clean = Image.open('resources/imgs/clean.jpg')
 pos_freq = Image.open('resources/imgs/pos_freq.jpg')
