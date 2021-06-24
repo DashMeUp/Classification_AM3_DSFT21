@@ -51,8 +51,6 @@ from nltk.corpus import stopwords
 
 # Text Preprocessing
 from nltk.tokenize import TweetTokenizer
-from nltk import PorterStemmer
-from nltk.stem.wordnet import WordNetLemmatizer
 
 # Feature Engineering and Data preparation for modelling
 from sklearn.feature_extraction.text import CountVectorizer
@@ -249,17 +247,17 @@ def main():
         st.cache(persist = True)
 
         #Create function that lemmatizes the words in a dataframe
-        def lem(df, column_name):
+        """def lem(df, column_name):
                 #Instantiate WordNetLemmatizer
                 lemmatizer = WordNetLemmatizer()
         
                 df = df.copy()
                 df[column_name] = df[column_name].apply(lambda sentence: [lemmatizer.lemmatize(word) for word in sentence])
-                return df
+                return df"""
 
         #Call the lem function on the train and test sets
-        lemmatized_train = lem(stopwords_train, 'message')
-        lemmatized_test = lem(stopwords_test, 'message')
+        lemmatized_train = stopwords_train
+        lemmatized_test = stopwords_test
 
         #Join the tokenized words into complete sentences
         lemmatized_train['message'] = [' '.join(tweet) for tweet in lemmatized_train['message'].values]
